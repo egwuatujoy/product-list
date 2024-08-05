@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.data-cart {
+  @apply text-xs font-bold flex justify-center items-center border-Rose300 border-2 bg-white py-1 px-4 rounded-2xl gap-2 ml-5 text-Rose900 ;
+}
+.data-img {
+  @apply rounded-md
+}
