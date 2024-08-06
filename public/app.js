@@ -16,21 +16,29 @@ fetch("data.json")
         stringPrice = `$${stringPrice}`;
       }
 
-      output += `<div>
+      output += 
+  `<div>
+    <div>
+      <img class="data-img" src="${d.image.desktop}" alt="">
 
-    <div class="relative">
-        <img class="data-img" src="${d.image.desktop}" alt="" ">
-        <button class="data-cart ">
-          <img src="./images/icon-add-to-cart.svg" alt="icon-svg" />
-          <h1>Add to Cart</h1>
-        </button>
-    </div class="about">
-      <p class="data-category"> ${d.category}</p>
-      <h1 class="data-name">${d.name}</h1>
-      <h2 class="data-price">${stringPrice}</h2>
-    </div> `;
+      <div class="flex justify-center items-end">
+       <button class="data-cart ">
+         <img src="./images/icon-add-to-cart.svg" alt="icon-svg" />
+         <h1>Add to Cart</h1>
+       </button>
+      </div>
+    </div>
+
+    <div class="my-2"> 
+         <p class="data-category"> ${d.category}</p>
+        <h1 class="data-name">${d.name}</h1>
+        <h2 class="data-price">${stringPrice}</h2>
+     </div>
+  </div>`;
 
       desertContainer.innerHTML = output;
+
+      console.log(output)
     }
   })
   .catch((err) => {
