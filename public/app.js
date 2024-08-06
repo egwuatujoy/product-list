@@ -19,16 +19,16 @@ fetch("data.json")
       output += `<div>
 
     <div class="relative">
-        <img class="rounded-md" src="${d.image.desktop}" alt="" ">
-        <button class="data-cart absolute top-28">
+        <img class="data-img" src="${d.image.desktop}" alt="" ">
+        <button class="data-cart ">
           <img src="./images/icon-add-to-cart.svg" alt="icon-svg" />
           <h1>Add to Cart</h1>
         </button>
-    </div>
-      <p class="text-Rose500 text-xs"> ${d.category}</p>
-      <h1 class="text-xs text-Rose900 font-bold">${d.name}</h1>
-      <h2 class="text-Red font-semibold text-sm">${stringPrice}</h2>
-        </div> `;
+    </div class="about">
+      <p class="data-category"> ${d.category}</p>
+      <h1 class="data-name">${d.name}</h1>
+      <h2 class="data-price">${stringPrice}</h2>
+    </div> `;
 
       desertContainer.innerHTML = output;
     }
