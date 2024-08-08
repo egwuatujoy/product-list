@@ -4,8 +4,13 @@
 @tailwind utilities;
 
 .data-cart {
-  @apply text-xs font-bold flex justify-center items-center border-Rose300 border-2 bg-white py-1 px-3 max-md:px-10 max-md:py-2 rounded-2xl gap-2 text-Rose900  ;
+  @apply text-xs font-bold flex justify-center items-center border-Rose300 border-2  py-1 px-3 max-md:px-10 max-md:py-2 rounded-2xl gap-2 text-Rose900 max-lg:px-5 bg-Red;
 }
+
+/* .data-incre {
+  @apply text-sm font-medium  flex justify-center items-center border-Rose300 border-2  py-1 px-3 max-md:px-5 max-md:py-2 rounded-2xl gap-5 text-white max-lg:px-5 bg-Red;
+} */
+
 .data-img {
   @apply rounded-md;
 }
@@ -19,3 +24,9 @@
 .data-price {
   @apply text-Red font-semibold text-sm max-md:text-lg;
 }
+
+.data-cart-div {
+  @apply flex justify-center items-center;
+} 
+
+

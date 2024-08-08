@@ -16,6 +16,9 @@ module.exports = {
         Red: "hsl(14, 86%, 42%)",
         Green: "hsl(159, 69%, 38%)",
       },
+      width: {
+        "full-hd": "1440px",
+      },
     },
   },
   plugins: [],

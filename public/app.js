@@ -1,46 +1,103 @@
+const confirmBtn = document.querySelector("#confirm-btn");
+const confirmSection = document.querySelector("#confirm-session");
 const desertContainer = document.querySelector("#desert-container");
-const chekoutContainer = document.querySelector("#checkout-container");
 
-fetch("data.json")
-  .then((response) => response.json())
-  .then((data) => {
-    const dessertData = data;
-    let output = "";
-    for (let d of dessertData) {
-      let stringPrice = d.price.toString();
-      if (stringPrice.length === 3) {
-        stringPrice = `$${stringPrice}0`;
-      } else if (stringPrice.length === 1) {
-        stringPrice = ` $${stringPrice}.00`;
+// for confirm Btn
+confirmBtn.addEventListener("click", () => {
+  confirmSection.classList.toggle("hidden");
+});
+
+// will add products to the desertContainer
+let products = [];
+
+function addProducts() {
+  desertContainer.innerHTML = "";
+
+  if (products.length > 0) {
+    products.forEach((product) => {
+      let newPrice = product.price.toString();
+
+      if (newPrice.length === 3) {
+        newPrice = `$${newPrice}0`;
+      } else if (newPrice.length === 1) {
+        newPrice = `$${newPrice}.00`;
       } else {
-        stringPrice = `$${stringPrice}`;
+        newPrice;
       }
 
-      output += 
-  `<div>
-    <div>
-      <img class="data-img" src="${d.image.desktop}" alt="">
+      let myBtn = `<div class="data-cart-div">
+             <button class="data-cart" id="data-cart">
+             <img
+                src='./images/icon-add-to-cart.svg'
+                alt='icon-add-to-cart'
+              />
+              Add to Cart
+              </button>
+          </div>`;
 
-      <div class="flex justify-center items-end">
-       <button class="data-cart ">
-         <img src="./images/icon-add-to-cart.svg" alt="icon-svg" />
-         <h1>Add to Cart</h1>
-       </button>
-      </div>
-    </div>
+      // the products
+      let newProducts = document.createElement("div");
+      newProducts.innerHTML = `<div>
+              <img
+                src="${product.image.desktop}"
+                alt="image-waffle-desktop"
+                class=""
+              />
+              ${myBtn}
+            </div>
+            <div class="">   
+              <p class="data-category">${product.category}</p>
+              <h1 class="data-name">${product.name}</h1>
+              <h1 class="data-price">${newPrice}</h1>
+            </div>`;
+      desertContainer.appendChild(newProducts);
+    });
+  }
+}
 
-    <div class="my-2"> 
-         <p class="data-category"> ${d.category}</p>
-        <h1 class="data-name">${d.name}</h1>
-        <h2 class="data-price">${stringPrice}</h2>
-     </div>
-  </div>`;
+const initApp = () => {
+  fetch("data.json")
+    .then((response) => response.json())
+    .then((data) => {
+      products = data;
+      addProducts();
+    });
+};
 
-      desertContainer.innerHTML = output;
+initApp();
 
-      console.log(output)
-    }
-  })
-  .catch((err) => {
-    console.log("Error:", err);
-  });
+let counterBtn = ` <div class="w-3/5 h-3/5">
+    <button class="decrease" onclick="decrease(this)" >
+      <img src="./images/icon-decrement-quantity.svg" alt="icon-decrement-quantity">
+    </button>
+     <hi class="text">1</hi>
+    <button class="increase" onclick="increase(this)" >
+      <img src="./images/icon-increment-quantity.svg" alt="icon-increment-quantity">
+   </button>
+   </div>`;
+
+desertContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("data-cart")) {
+    e.target.innerHTML = counterBtn;
+  }
+});
+
+function decrease(e) {
+  let text = e.nextElementSibling;
+  text.textContent = parseInt(text.textContent) - 1;
+  if (text.textContent == 0) {
+    e.parentNode.parentNode.innerHTML = `<button class="data-cart" id="data-cart">
+             <img
+                src='./images/icon-add-to-cart.svg'
+                alt='icon-add-to-cart'
+              />
+              Add to Cart
+              </button>`;
+  }
+}
+
+function increase(e) {
+  let text = e.previousElementSibling;
+  text.textContent = parseInt(text.textContent) + 1;
+  console.log(text);
+}
