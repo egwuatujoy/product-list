@@ -55,6 +55,7 @@ function addProducts() {
   }
 }
 
+// fetch products
 const initApp = () => {
   fetch("data.json")
     .then((response) => response.json())
@@ -66,7 +67,7 @@ const initApp = () => {
 
 initApp();
 
-let counterBtn = ` <div class="w-3/5 h-3/5">
+let counterBtn = `
     <button class="decrease" onclick="decrease(this)" >
       <img src="./images/icon-decrement-quantity.svg" alt="icon-decrement-quantity">
     </button>
@@ -74,10 +75,11 @@ let counterBtn = ` <div class="w-3/5 h-3/5">
     <button class="increase" onclick="increase(this)" >
       <img src="./images/icon-increment-quantity.svg" alt="icon-increment-quantity">
    </button>
-   </div>`;
+   `;
 
 desertContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("data-cart")) {
+    e.target.className = "data-cart-selected";
     e.target.innerHTML = counterBtn;
   }
 });

@@ -2667,7 +2667,7 @@ video {
   --tw-border-opacity: 1;
   border-color: hsl(14 25% 72% / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
-  background-color: hsl(14 86% 42% / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.75rem;
@@ -2751,6 +2751,20 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.data-cart-selected{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  border-radius: 1rem;
+  --tw-bg-opacity: 1;
+  background-color: hsl(14 86% 42% / var(--tw-bg-opacity));
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 @media (min-width: 640px){
@@ -2853,6 +2867,4 @@ video {
       paint-order: markers;
     }
   }
-} 
-
-
+}
