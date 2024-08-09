@@ -1,11 +1,7 @@
 const confirmBtn = document.querySelector("#confirm-btn");
 const confirmSection = document.querySelector("#confirm-session");
 const desertContainer = document.querySelector("#desert-container");
-
-// for confirm Btn
-confirmBtn.addEventListener("click", () => {
-  confirmSection.classList.toggle("hidden");
-});
+const checkoutContainer = document.querySelector("#checkout-container");
 
 // will add products to the desertContainer
 let products = [];
@@ -37,11 +33,11 @@ function addProducts() {
 
       // the products
       let newProducts = document.createElement("div");
-      newProducts.innerHTML = `<div>
+      newProducts.innerHTML = `
               <img
                 src="${product.image.desktop}"
                 alt="image-waffle-desktop"
-                class=""
+                class=" flex"
               />
               ${myBtn}
             </div>
@@ -68,12 +64,12 @@ const initApp = () => {
 initApp();
 
 let counterBtn = `
-    <button class="decrease" onclick="decrease(this)" >
-      <img src="./images/icon-decrement-quantity.svg" alt="icon-decrement-quantity">
+    <button class=" border-2 py-2.5 px-1 rounded-full"  onclick="decrease(this)" >
+      <img src="./images/icon-decrement-quantity.svg" alt="icon-decrement-quantity" class="w-4">
     </button>
-     <hi class="text">1</hi>
-    <button class="increase" onclick="increase(this)" >
-      <img src="./images/icon-increment-quantity.svg" alt="icon-increment-quantity">
+     <hi class="text-white font-medium">1</hi>
+    <button class="border-2 py-1 px-1 rounded-full" onclick="increase(this)" >
+      <img src="./images/icon-increment-quantity.svg" alt="icon-increment-quantity" class="w-4 ">
    </button>
    `;
 
@@ -103,3 +99,13 @@ function increase(e) {
   text.textContent = parseInt(text.textContent) + 1;
   console.log(text);
 }
+
+// for confirm Btn
+confirmBtn.addEventListener("click", () => {
+  confirmSection.classList.toggle("hidden");
+});
+
+confirmSection.addEventListener("click", () => {
+  confirmSection.classList.add("hidden");
+  alert("ORDER RECEIVED");
+});
