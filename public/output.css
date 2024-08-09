@@ -2133,6 +2133,11 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.px-9{
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+
 .text-left{
   text-align: left;
 }
@@ -2864,60 +2869,40 @@ video {
     right: 1.25rem;
   }
 
-  .max-lg\:left-10{
-    left: 2.5rem;
+  .max-lg\:left-2{
+    left: 0.5rem;
   }
 
-  .max-lg\:left-9{
-    left: 2.25rem;
-  }
-
-  .max-lg\:left-96{
-    left: 24rem;
-  }
-
-  .max-lg\:left-6{
-    left: 1.5rem;
-  }
-
-  .max-lg\:left-60{
-    left: 15rem;
-  }
-
-  .max-lg\:left-5{
-    left: 1.25rem;
-  }
-
-  .max-lg\:left-52{
-    left: 13rem;
-  }
-
-  .max-lg\:left-4{
-    left: 1rem;
-  }
-
-  .max-lg\:left-40{
-    left: 10rem;
-  }
-
-  .max-lg\:left-3{
-    left: 0.75rem;
+  .max-lg\:left-20{
+    left: 5rem;
   }
 
   .max-lg\:left-32{
     left: 8rem;
   }
 
-  .max-lg\:mb-60{
-    margin-bottom: 15rem;
+  .max-lg\:left-80{
+    left: 20rem;
   }
 
-  .max-lg\:mb-9{
-    margin-bottom: 2.25rem;
+  .max-lg\:left-8{
+    left: 2rem;
   }
 
-  .max-lg\:mb-96{
-    margin-bottom: 24rem;
+  .max-lg\:left-1{
+    left: 0.25rem;
+  }
+
+  .max-lg\:left-10{
+    left: 2.5rem;
+  }
+
+  .max-lg\:left-5{
+    left: 1.25rem;
+  }
+
+  .max-lg\:left-9{
+    left: 2.25rem;
   }
 
   .max-lg\:block{
